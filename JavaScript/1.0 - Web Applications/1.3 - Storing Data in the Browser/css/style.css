@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --cor-primaria: white;
+    --cor-secundaria: black;
+    --cor-terciaria: rgba(0, 0, 0, 0.822);
+}
+::placeholder {
+    user-select: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: radial-gradient(farthest-corner at right top,#21A09D, #06182D) fixed no-repeat;
+    height: 100vh;
+    color: var(--cor-primaria);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    user-select: none;
+}
+main {
+    display: flex;
+    align-items: flex-start;
+}
+.principal {
+    width: 50vw;
+    max-width: 800px;
+    padding: 2em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: 2px solid var(--cor-primaria);
+    border-radius: 20px;
+    margin: 40px 0 0 40px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+form div {
+    width: 90%;
+}
+form input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding: 8px;
+    border-radius: 15px;
+    border: 2px solid var(--cor-primaria);
+    background: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    font-size: 12pt;
+    transition: .5s;
+    outline: 0;
+}
+form label {
+    position: absolute;
+    font-size: 12pt;
+    margin-top: 30px;
+    margin-left: 10px;
+    pointer-events: none;
+    transition: .5s;
+}
+#submit, .botaoExcluir {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    width: 90%;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    font-family: 'Montserrat', sans-serif;
+    transition: .5s;
+}
+#submit:hover, .botaoExcluir:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ITENS */
+.lista {
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    list-style: none;
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 20px;
+    border: 2px solid var(--cor-primaria);
+    margin: 40px 0 0 40px;
+    width: 40vw;
+    max-width: 700px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 15pt;
+    justify-content: space-between;
+}
+.item strong {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--cor-primaria);
+}
+.botaoExcluir {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13pt;
+    width: 40px;
+    height: 40px;
+    outline: 0;
+    border: 2px solid var(--cor-primaria);
+}
+
+@media (max-width: 1200px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0 0 0;
+        gap: 2;
+    }
+    .principal {
+        width: 80vw;
+    }
+    .item {
+        width: 80vw;
+    } 
+}
+@media (max-width: 800px) {
+    .principal {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 2em 1em;
+        width: 90vw;
+    }
+    .principal h1 {
+        padding: 10px 0 40px 0;
+    }
+    form {
+        margin-top: -40px;
+    }
+}

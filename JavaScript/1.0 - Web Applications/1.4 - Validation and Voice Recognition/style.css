@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --font-family: 'Montserrat', sans-serif;
+    --bg-cor: rgb(29, 123, 185);
+    --cor-primaria: white;
+}
+
+body {
+    background-color: var(--bg-cor);
+    color: var(--cor-primaria);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+h1 {
+    font-size: 80px;
+}
+h2 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+.chute {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+.boxReconhecimentoDeVoz {
+    border: 2px solid var(--cor-primaria);
+    display: inline-block;
+    font-size: 4em;
+    margin: 20px;
+    padding: 10px;
+}
+.desativar {
+    display: none;
+}
+.inputChute {
+    width: 140px;
+    box-sizing: border-box;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid var(--cor-primaria);
+    background: none;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    font-size: 12pt;
+    transition: .5s;
+    text-align: center;
+    outline: 0;
+}
+label {
+    position: absolute;
+    font-size: 12pt;
+    margin-top: 34px;
+    margin-left: 18px;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputChute[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.inputEnviar {
+    width: 70px;
+    box-sizing: border-box;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid var(--cor-primaria);
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    color: var(--cor-primaria);
+    font-size: 12pt;
+    transition: .5s;
+    text-align: center;
+    outline: 0;
+}
+.inputEnviar:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+}
+.entradas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto 0 auto;
+    width: 200px;
+}
+.botoes {
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s;
+    
+}
+.botoes:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.ativo {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1100px) {
+    h1 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+}
+@media (max-width: 800px) {
+    h1 {
+        font-size: 45px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 35px;
+    }
+    h2 {
+        font-size: 15px;
+    }
+}

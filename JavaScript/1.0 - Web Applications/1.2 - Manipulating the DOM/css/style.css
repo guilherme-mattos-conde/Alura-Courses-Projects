@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --main-cinza: #CCCCCC;
+    --main-branco: #FFFFFF;
+    --cor-texto: white;
+    --amarelo: rgb(255, 187, 0);
+    --azul: rgb(0, 153, 255);
+    --branco: rgb(255, 255, 255);
+    --preto: rgb(0,0,0);
+    --rosa: rgb(255, 29, 236);
+    --vermelho: rgb(255, 17, 17);
+    --fundo-box: rgba(31, 31, 31, 0.384);
+    --cor-primaria: rgb(221, 174, 174);
+    --cor-secundaria: black;
+}
+* {
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-texto);
+    background: linear-gradient(to bottom, var(--cor-primaria), var(--cor-secundaria));
+}
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.box, .box form {
+    display: flex;
+    width: 30vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ROBOTRON */
+.robotron {
+    display: flex;
+    width: 35vw;
+    flex-direction: column;
+    align-items: center;
+}
+.robo {
+    height: 80vh;
+}
+.lista-botoes .botoes {
+    width: 6vh;
+    height: 6vh;
+    margin: 10px 5px 0 5px;
+    border-radius:50%;
+}
+
+.lista-botoes .amarelo { background-color: var(--amarelo); border: 2px solid gray }
+.lista-botoes .azul { background-color: var(--azul); border: 2px solid gray }
+.lista-botoes .branco { background-color: var(--branco); border: 2px solid gray }
+.lista-botoes .preto { background-color: var(--preto); border: 2px solid gray }
+.lista-botoes .rosa { background-color: var(--rosa); border: 2px solid gray }
+.lista-botoes .vermelho { background-color: var(--vermelho); border: 2px solid gray }
+.lista-botoes .amarelo:hover { cursor: pointer; }
+.lista-botoes .azul:hover { cursor: pointer; }
+.lista-botoes .branco:hover { cursor: pointer; }
+.lista-botoes .preto:hover { cursor: pointer; }
+.lista-botoes .rosa:hover { cursor: pointer; }
+.lista-botoes .vermelho:hover { cursor: pointer; }
+
+.botoes {
+    opacity: 60%;
+}
+.active {
+    opacity: 100%;
+    box-shadow: 0 0 10px var(--cor-texto);
+}
+
+
+/* ESTATÍSTICA */
+.estatisticas, .equipamentos {
+    display: flex;
+    width: 90%;
+    height: 60vh;
+    background-color: var(--fundo-box);
+    border: 3px solid var(--cor-texto);
+    box-shadow: 0 0 15px var(--cor-texto);
+    border-radius: 25px;
+    flex-direction: column;
+    justify-content: space-around;
+    text-shadow: 0 0 2px var(--cor-texto);
+}
+.estatistica {
+    display: flex;
+    margin:  0 30px;
+    justify-content: space-between;
+    font-size: 20pt;
+}
+.peca {
+    display: flex;
+    margin:  0 30px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20pt;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.peca input {
+    width: 50px;
+    color: var(--cor-texto);
+    font-size: 20pt;
+    background-color: transparent;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+.controle {
+    border: 2px solid var(--cor-texto);
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: 0 0 5px var(--cor-texto);
+}
+.controle-ajuste {
+    cursor: pointer;
+}
+.equipamentos {
+    position:relative;
+}
+.botao-enviar {
+    position: absolute;
+    margin-top: 68vh;
+    width: 200px;
+    height: 50px;
+    background-color: var(--fundo-box);
+    border: 3px solid var(--cor-texto);
+    box-shadow: 0 0 15px var(--cor-texto);
+    border-radius: 25px;
+    color: var(--cor-texto);
+    text-shadow: 0 0 2px var(--cor-texto);
+    font-size: 12pt;
+    cursor: pointer;
+    transition: .5s;
+}
+.botao-enviar:hover {
+    background: rgba(128, 128, 128, 0.171);
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        margin: 50px 0;
+    }
+    .box, .box form, .robotron {
+        width: 50vw;
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        margin: 50px 0;
+    }
+    .box, .box form, .robotron {
+        width: 80vw;
+        margin-bottom: 50px;
+    }
+    .robo {
+        height: auto;
+        width: 80vw;
+    }
+}
