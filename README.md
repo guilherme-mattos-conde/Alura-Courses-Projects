@@ -1,4 +1,4 @@
-# Alura-Couses-Projects! Welcome to my repository ✌
+# Alura-Couses-Projects | Welcome to my repository ✌
 
 <p align="justify">In this repository I post the activities I do in <a href="https://github.com/alura">Alura</a>'s couse. It's divided by main and specific subject/course.</p>
 
