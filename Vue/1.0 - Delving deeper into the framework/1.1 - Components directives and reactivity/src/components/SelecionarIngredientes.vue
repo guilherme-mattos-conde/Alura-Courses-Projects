@@ -1,8 +1,10 @@
 <script lang="ts">
 import { obterCategorias } from '@/http';
 import type ICategoria from '@/interfaces/ICategoria';
+import CardCategoria from './CardCategoria.vue';
 
 export default {
+    components: { CardCategoria },
     data() {
         return {
             categorias: [] as ICategoria[]
@@ -20,7 +22,7 @@ export default {
         <p class="paragrafo-lg instrucoes">Slecione abaixo os ingredientes que você quer user nesta receita:</p>
         <ul class="categorias">
             <li v-for="categoria in categorias" :key="categoria.nome">
-                {{categoria.nome}}
+                <CardCategoria :categoria="categoria" />
             </li>
         </ul>
         <p class="paragrafo dica">
@@ -30,38 +32,38 @@ export default {
 </template>
 
 <style>
-    .selecionar-ingredientes {
+.selecionar-ingredientes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
+}
 
-    .titulo-ingredientes {
+.titulo-ingredientes {
     color: var(--verde-medio, #3D6D4A);
     display: block;
     margin-bottom: 1.5rem;
-    }
+}
 
-    .instrucoes {
+.instrucoes {
     margin-bottom: 2rem;
-    }
+}
 
-    .categorias {
+.categorias {
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    }
+}
 
-    .dica {
+.dica {
     align-self: flex-start;
     margin-bottom: 3.5rem;
-    }
+}
 
-    @media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     .dica {
         margin-bottom: 2.5rem;
     }
-    }
+}
 </style>
