@@ -24,7 +24,7 @@ export default {
             this.conteudo = pagina;
         }
     },
-    components: { SelecionarIngredientes, Tag, SuaLista }
+    components: { SelecionarIngredientes, MostrarReceitas, Tag, SuaLista }
 }
 </script>
 
@@ -35,18 +35,19 @@ export default {
         <SelecionarIngredientes v-if="conteudo === 'SelecionarIngredientes'"
         @adicionar-ingrediente="adicionarIngrediente"
         @remover-ingrediente="removerIngrediente"
-        @buscar-receitas="navegar($event)"/>
+        @mostrar-receitas="navegar('MostrarReceitas')"/>
 
-        <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'" />
+        <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'"
+        @selecionar-ingredientes="navegar('SelecionarIngredientes')"/>
     </main>
 </template>
 
 <style>
     .sua-lista-texto {
-            color: var(--coral, #F0633C);
-            display: block;
-            text-align: center;
-            margin-bottom: 1.5rem;
+        color: var(--coral, #F0633C);
+        display: block;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
     .ingredientes-sua-lista {
@@ -67,14 +68,14 @@ export default {
     }
     
     .conteudo-principal {
-    padding: 6.5rem 7.5rem;
-    border-radius: 3.75rem 3.75rem 0rem 0rem;
-    background: var(--creme, #FFFAF3);
-    color: var(--cinza, #444);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
+        padding: 4rem 7.5rem;
+        border-radius: 3.75rem 3.75rem 0rem 0rem;
+        background: var(--creme, #FFFAF3);
+        color: var(--cinza, #444);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
     }
 
     @media only screen and (max-width: 1300px) {

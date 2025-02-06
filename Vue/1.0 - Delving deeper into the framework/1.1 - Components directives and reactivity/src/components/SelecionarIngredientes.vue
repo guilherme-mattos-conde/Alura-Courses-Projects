@@ -14,14 +14,14 @@ export default {
     async created() {
         this.categorias = await obterCategorias();
     },
-    emits: ['adicionarIngrediente', 'removerIngrediente', 'buscarReceitas']
+    emits: ['adicionarIngrediente', 'removerIngrediente', 'MostrarReceitas']
 }
 </script>
 
 <template>
     <section class="selecionar-ingredientes">
-        <h1 class="cabecalho titulo-ingredientes">ingredientes</h1>
-        <p class="paragrafo-lg instrucoes">Slecione abaixo os ingredientes que você quer user nesta receita:</p>
+        <h1 class="cabecalho titulo-ingredientes">Ingredientes</h1>
+        <p class="paragrafo-lg instrucoes">Selecione abaixo os ingredientes que você quer user nesta receita:</p>
         <ul class="categorias">
             <li v-for="categoria in categorias" :key="categoria.nome">
                 <CardCategoria
@@ -35,7 +35,7 @@ export default {
         </p>
     </section>
 
-    <BotaoPrincipal :texto="'Buscar receitas!'" @click="$emit('buscarReceitas')"/>
+    <BotaoPrincipal :texto="'Buscar receitas!'" @click="$emit('MostrarReceitas')"/>
 </template>
 
 <style>
@@ -64,7 +64,6 @@ export default {
 }
 
 .dica {
-    align-self: flex-start;
     margin-bottom: 3.5rem;
 }
 
