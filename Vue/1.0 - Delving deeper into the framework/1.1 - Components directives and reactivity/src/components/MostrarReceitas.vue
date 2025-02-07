@@ -3,9 +3,13 @@ import { obterReceitas } from '@/http';
 import CardReceita from './CardReceita.vue';
 import type IReceita from '@/interfaces/IReceita';
 import BotaoPrincipal from './BotaoPrincipal.vue';
+import type { PropType } from 'vue';
+import { comparaListas } from '@/operacoes/listas';
 
 export default {
-    components: { CardReceita, BotaoPrincipal },
+    props: {
+        ingredientes: { type: Array as PropType<string[]>, required: true}
+    },
     data() {
         return {
             receitas: [] as IReceita[]
@@ -13,7 +17,12 @@ export default {
     },
     async created() {
         this.receitas = await obterReceitas();
+        
+        this.receitas = this.receitas.filter((receita) => {
+            return comparaListas(receita.ingredientes, this.ingredientes)
+        })
     },
+    components: { CardReceita, BotaoPrincipal },
     emits: [ 'SelecionarIngredientes' ]
 }
 </script>
@@ -23,7 +32,7 @@ export default {
         <h1 class="cabecalho titulo-receitas">Receitas</h1>
         <p class="paragrafo-lg resultados">Resultados encontrados: {{ receitas.length }}</p>
 
-        <section v-if="!receitas.length">
+        <section v-if="receitas.length">
             <p class="paragrafo-lg instrucoes">Veja as opções de receitas que encontramos com os ingredientes que você tem por aí!</p>
             <ul class="receitas">
                 <li v-for="receita in receitas" :key="receita.nome">
@@ -60,6 +69,7 @@ export default {
 }
 
 .instrucoes {
+    text-align: center;
     margin-bottom: 2rem;
 }
 

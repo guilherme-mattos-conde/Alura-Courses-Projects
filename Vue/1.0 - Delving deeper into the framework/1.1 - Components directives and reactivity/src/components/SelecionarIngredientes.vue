@@ -1,10 +1,11 @@
 <script lang="ts">
-import { obterCategorias } from '@/http';
+import { obterCategorias } from '@/http/index';
 import BotaoPrincipal from './BotaoPrincipal.vue';
 import type ICategoria from '@/interfaces/ICategoria';
 import CardCategoria from './CardCategoria.vue';
 
 export default {
+    name: 'SelecionarIngredientes',
     components: { CardCategoria, BotaoPrincipal },
     data() {
         return {
