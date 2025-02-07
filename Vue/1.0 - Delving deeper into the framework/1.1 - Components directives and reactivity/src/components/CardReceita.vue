@@ -11,7 +11,7 @@ export default {
 
 <template>
     <article class="receita">
-        <img :src="`/public/imagens/receitas/${ receita.imagem }`" alt="Foto da receita" class="receita__imagem">
+        <img :src="`/imagens/receitas/${ receita.imagem }`" alt="Foto da receita" class="receita__imagem">
         <h2 class="paragrafo-lg receita__nome">{{ receita.nome }}</h2>
     </article>
 </template>
